@@ -7,9 +7,9 @@
 
 ## Overview
 
-This project focuses on connecting multiple Amazon Virtual Private Clouds (VPCs) using VPC peering. The goal is to understand how separate cloud networks communicate privately and how routing and security configurations enable or block traffic between them.
+This project focuses on connecting multiple Amazon Virtual Private Clouds (VPCs) using VPC peering. The goal is to understand how separate cloud networks communicate privately and how routing and security configurations control traffic between them.
 
-This project demonstrates how multi-VPC architectures are designed and managed in real-world AWS environments. :contentReference[oaicite:0]{index=0}
+This project demonstrates how multi-VPC architectures are designed, configured, and tested in real-world AWS environments.
 
 ---
 
@@ -23,7 +23,7 @@ I created two separate Amazon VPCs and connected them using a VPC peering connec
 - Launching EC2 instances in each VPC  
 - Testing private connectivity between VPCs using ICMP  
 
-This setup mirrors common production architectures where services are segmented across multiple VPCs while remaining privately connected. :contentReference[oaicite:1]{index=1}
+This setup mirrors common production architectures where services are segmented across multiple VPCs while remaining privately connected.
 
 ---
 
@@ -34,15 +34,15 @@ This setup mirrors common production architectures where services are segmented 
 - The difference between requester and accepter VPCs  
 - How route tables enable communication across peered VPCs  
 - How security groups affect cross-VPC traffic  
-- How Elastic IPs and EC2 Instance Connect support access and testing :contentReference[oaicite:2]{index=2}
+- How Elastic IPs and EC2 Instance Connect support access and testing  
 
 ---
 
 ## How VPC peering works
 
-A VPC peering connection allows two VPCs to communicate using private IP addresses without sending traffic over the public internet. Once a peering connection is established and accepted, routing and security rules must be configured on both sides to allow traffic.
+A VPC peering connection allows two VPCs to communicate using private IP addresses without sending traffic over the public internet. Once the peering connection is created and accepted, route tables and security rules must be configured on both sides for traffic to flow.
 
-Peering connections are commonly used to connect environments such as development, staging, and production, or to share services across isolated networks. :contentReference[oaicite:3]{index=3}
+VPC peering is commonly used to connect environments such as development, staging, and production, or to share services across isolated networks.
 
 ---
 
@@ -54,7 +54,7 @@ I tested connectivity between EC2 instances in each VPC using the `ping` command
 - Security group inbound and outbound rules  
 - Instance accessibility using EC2 Instance Connect  
 
-Updating the security groups to allow ICMP traffic between the VPC CIDR ranges resolved the issue and confirmed successful peering. :contentReference[oaicite:4]{index=4}
+Updating the security groups to allow ICMP traffic between the VPC CIDR ranges resolved the issue and confirmed successful peering.
 
 ---
 
@@ -62,7 +62,7 @@ Updating the security groups to allow ICMP traffic between the VPC CIDR ranges r
 
 Multi-VPC architectures are common in AWS for scalability, security, and organizational separation. Understanding how to securely connect VPCs while maintaining isolation is a critical skill for cloud engineers and security professionals.
 
-This project demonstrates how private cloud networks communicate and how misconfigurations are identified and resolved. :contentReference[oaicite:5]{index=5}
+This project demonstrates how private cloud networks communicate and how misconfigurations are identified and resolved.
 
 ---
 
